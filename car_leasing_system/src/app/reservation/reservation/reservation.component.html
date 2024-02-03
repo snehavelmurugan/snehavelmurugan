@@ -1,0 +1,59 @@
+<div class="bg-img">
+    <br>
+    <div class="container">
+        <form (ngSubmit)="submitReservation()">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <select id="location" [(ngModel)]="selectedLocation" name="selectedLocation"
+                            class="form-control gray-textbox">
+                            <option *ngFor="let location of availableLocations" [value]="location">{{ location }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate"
+                            class="form-control gray-textbox">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate"
+                            class="form-control gray-textbox">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="leaseAmount">Lease Amount</label>
+                        <input type = "number" [value]="price" class="form-control gray-textbox">
+            
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"
+                    style="background-color: rgb(6, 6, 6);">Submit Reservation</button>&nbsp;
+                    <a href="lease-agreement" class="btn btn-primary" style="background-color: rgb(14, 13, 13);">
+                        Agreement Builder</a>
+                        <a href="download" class="btn btn-primary" style="background-color: rgb(14, 13, 13);">
+                            Download Document</a>
+            </div>
+            <!-- <div class="text-center mb-4"> -->
+                
+            <!-- </div> -->
+        </form>
+    </div>
+</div>

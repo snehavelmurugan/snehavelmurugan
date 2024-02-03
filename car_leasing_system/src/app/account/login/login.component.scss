@@ -1,0 +1,45 @@
+.bgimg {
+    background-image: url("../../../assets/images/sugg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.custom {
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+.custom-border {
+    border-color: #050505;
+}
+
+/* Change the checkbox color to rgb(128, 128, 128) */
+input[type="checkbox"] {
+    background-color: rgb(3, 3, 3);
+}
+
+/* Change the text color of the "Forgot password?" button to rgb(128, 128, 128) */
+button.btn-primary[aria-label="Forgot password?"] {
+    color: rgb(6, 6, 6);
+}
+
+/* Change the text color of the "Login" and "Register" tabs to rgb(128, 128, 128) */
+mdb-tab {
+    color: rgb(4, 4, 4);
+}
+
+// label
+// {
+//     color: #0f0f0f;
+// }
+label.custom-label {
+    color: #0f0f0f;
+}
+
+span
+{
+    color: red;
+}

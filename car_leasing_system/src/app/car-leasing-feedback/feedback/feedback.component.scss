@@ -1,0 +1,104 @@
+/* Set a background color for the body */
+body {
+    background-color: #0a0909;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Ensure the content is both vertically and horizontally centered */
+}
+
+/* Style the form container */
+.form-group {
+    text-align: left;
+    /* Left-align the content within form-group */
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    /* Left-align labels */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    /* Use 100% width for input elements and text area */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+button {
+    background-color: #0b0b0b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* Add space below the button */
+}
+
+/* Style the feedback list and details */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+#l1 {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the feedback details container */
+.container {
+    max-width: 960px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    /* Add space above the container */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style the buttons in the feedback details section */
+#b1,
+#b2 {
+    background-color: #080808;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* Style horizontal lines */
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

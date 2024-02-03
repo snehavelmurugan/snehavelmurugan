@@ -1,0 +1,34 @@
+<form [formGroup]="vehicleForm" (ngSubmit)="submiForm()" class="container">
+  <div>
+    <label for="vin">Vehicle Identification Number:</label><br>
+    <input type="text" id="vin" formControlName="vin" value="{{data.vin}}">
+  </div>
+  <div>
+    <label for="made">Made:</label><br>
+    <input type="text" id="made" formControlName="made" value="{{data.made}}">
+  </div>
+
+
+  <div>
+    <label for="model">Model:</label><br>
+    <input type="text" id="model" formControlName="model" value="{{data.model}}">
+  </div>
+  <div>
+    <label for="year">Year:</label><br>
+    <input type="text" id="year" formControlName="year" value="{{data.year}}">
+  </div>
+  <div>
+    <label for="lease_price">Lease price:</label><br>
+    <input type="text" id="lease_price" formControlName="lease_price" value="{{data.lease_price}}"><br><br><br>
+
+  </div>
+  <div>
+    <input type="file" accept="image/" formControlName="image">
+  </div>
+  <div>
+    <!-- <img [src]="imageSrc" alt="Vehicle Image"> -->
+  </div>
+  <button (click)="updateVehicle()">Update</button> &nbsp;
+  <button (click)="deleteVehicle()">Delete</button>&nbsp;
+  <button type="submit" routerLink="/view">View</button>
+</form>

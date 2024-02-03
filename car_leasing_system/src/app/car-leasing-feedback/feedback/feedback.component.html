@@ -1,0 +1,43 @@
+<div id="f1">
+    <div class="center-form">
+        <form (submit)="createNewFeedback()">
+            <div class="form-group">
+                <label for="carModel">Car Model</label>
+                <input type="text" id="carModel" name="carModel" [(ngModel)]="newFeedback.carModel" required>
+            </div>
+            <div class="form-group">
+                <label for="feedbackText">Feedback Text</label>
+                <textarea id="feedbackText" name="feedbackText" [(ngModel)]="newFeedback.feedbackText"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="starRating">Star Rating</label>
+                <app-star-rating [(rating)]="newFeedback.starRating"></app-star-rating>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</div>
+<br>
+<h2>Feedback List</h2>
+<ul>
+    <li *ngFor="let feedback of feedbackList">
+        <hr>
+        <a id="l1" (click)="selectFeedback(feedback)">{{ feedback.carModel }}</a>
+        <a id="a1">{{ feedback.feedbackText }}</a>
+        <hr>
+    </li>
+</ul>
+<hr>
+
+<div class="container">
+    <h2 *ngIf="selectedFeedback">Feedback Details</h2>
+    <div *ngIf="selectedFeedback">
+        <h3>Feedback ID: {{ selectedFeedback.id }}</h3>
+        <p>Car Model: {{ selectedFeedback.carModel }}</p>
+        <p>Feedback Text: {{ selectedFeedback.feedbackText }}</p>
+        <p>Star Rating: {{ selectedFeedback.starRating }}</p>
+        <button (click)="updateSelectedFeedback()" id="b1">Update</button>
+        <button (click)="deleteSelectedFeedback()" id="b2">Delete</button>
+    </div>
+    <hr>
+</div>

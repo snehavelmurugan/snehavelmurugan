@@ -1,0 +1,32 @@
+<div class="grid-container">
+
+    <div *ngFor="let s of data" class="leasing-card">
+
+        <img id="imageC" src="data:image/png;base64,{{s.image}}" alt="{{s.vin}} Image">
+
+        <a class="heading">VIN: </a>
+
+        <a>{{s.vin}}</a><br><br>
+
+        <a class="heading">MADE : </a>
+
+        <a>{{s.made}}</a><br><br>
+
+        <a class="heading">MODEL : </a>
+
+        <a>{{s.model}}</a><br><br>
+
+        <a class="heading">YEAR : </a>
+
+        <a>{{s.year}}</a><br><br>
+
+        <a class="heading">LEASE PRICE: </a>
+
+        <a>{{s.lease_price}}</a><br><br>&nbsp;&nbsp;
+        <button (click)="book(s.lease_price)">Book Now</button>&nbsp;
+        <button (click)="updateVehicle(s.vin)">Update</button>&nbsp;
+        <button (click)="gotodoc()">Get Document</button>&nbsp;
+        
+        
+    </div>
+</div>

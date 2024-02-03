@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Caveat";
+    src: url("./assets/fonts/caveat/Caveat-VariableFont_wght.ttf") format("ttf"),
+        url("./assets/fonts/caveat/static/Caveat-Bold.ttf") format("ttf"),
+        url("./assets/fonts/caveat/static/Caveat-Medium.ttf") format("ttf"),
+        url("./assets/fonts/caveat/static/Caveat-Regular.ttf") format("ttf"),
+        url("./assets/fonts/caveat/static/Caveat-SemiBold.ttf") format("ttf");
+    font-weight: 500;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }
+.nav-item{
+    font-family: 'Roboto',sans-serif;
+}
+.custom-bg-color {
+    background-color: #0a0a0a;
+    /* Change the color code to your desired color */
+}

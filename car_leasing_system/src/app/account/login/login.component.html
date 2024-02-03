@@ -1,0 +1,168 @@
+<section class="bgimg">
+    <div class="w-50 custom">
+        <mdb-tabs [pills]="true" [fill]="true">
+            <mdb-tab title="Login">
+                <form [formGroup]="loginform" (ngSubmit)="login()">
+                    <!-- Email input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="email" formControlName="login_value" id="loginName" class="form-control" />
+                        <label mdbLabel class="form-label text-light" for="loginName">Email or username</label>
+                    </mdb-form-control>
+                    <div class="mb-4">
+                        <section  *ngIf="lf['login_value'].errors != null && lf['login_value'].touched">
+                            <span *ngIf="login_submitted && lf['login_value'].errors!['required']">this field is required</span>
+                        </section>
+                    </div>
+
+                    <!-- Password input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="password" formControlName="login_password" id="loginPassword" class="form-control" />
+                        <label mdbLabel class="form-label text-light" for="loginPassword">Password</label>
+                    </mdb-form-control>
+                    <div class="mb-4">
+                        <section  *ngIf="lf['login_password'].errors != null && lf['login_password'].touched">
+                            <span *ngIf="login_submitted && lf['login_password'].errors!['required']">password is required</span>
+                        </section>
+                    </div>
+
+                    <!-- 2 column grid layout -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                                <input mdbCheckbox class="form-check-input" type="checkbox" value="" id="loginCheck"/>
+                                <label class="form-check-label text-light" for="loginCheck"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <button type="button" class="btn btn-primary" style="background-color: rgb(253, 252, 252);"
+                            (click)="openModal()"><label class="custom-label">Forget Password</label></button>
+                        </div>
+                    </div>
+
+                    <section class="container">
+                        <div class="row">
+                            <section class="col-md-6 text-left">
+                                <!-- Submit button -->
+                                <button mdbRipple type="submit" class="btn btn-primary btn-block mb-4"
+                                    style="background-color: rgb(252, 251, 251);">
+                                    <label class="custom-label">Login</label>
+                                </button>
+                            </section>
+
+                            <section class="col-md-6 text-right">
+                                <button mdbRipple type="reset" class="btn btn-primary btn-block mb-4"
+                                    style="background-color: rgb(252, 251, 251);"
+                                    (click)="revert_login()">
+                                    <label class="custom-label">Reset</label>
+                                </button>
+                            </section>
+                        </div>
+                    </section>
+
+                </form>
+            </mdb-tab>
+
+            <mdb-tab title="Register">
+                <form [formGroup]="registerform" (ngSubmit)="register()">
+                    <!-- Name input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="text" id="registerName" formControlName="name" class="form-control custom-border text-white" />
+                        <label mdbLabel class="form-label text-white" for="registerName">Name</label>
+                    </mdb-form-control>
+                    <div class="mb-3">
+                        <section  *ngIf="rf['name'].errors != null && rf['name'].touched">
+                            <span *ngIf="rf['name'].errors!['required']">name is required</span>
+                        </section>
+                    </div>
+            
+                    <!-- Username input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="text" id="registerUsername" formControlName="username" class="form-control text-white" />
+                        <label mdbLabel class="form-label text-white" for="registerUsername">Username</label>
+                    </mdb-form-control>
+                    <div class="mb-3">
+                        <section  *ngIf="rf['username'].errors != null && rf['username'].touched">
+                            <span *ngIf="rf['username'].errors!['required']">username is required</span>
+                        </section>
+                    </div>
+            
+                    <!-- Email input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="email" id="email" formControlName="email" class="form-control text-white" />
+                        <label mdbLabel class="form-label text-white" for="registerEmail">Email</label>
+                    </mdb-form-control>
+                    <section class="mb-3">
+                        <div *ngIf="rf['email'].errors != null && rf['email'].touched">
+                            <span *ngIf="rf['email'].errors!['required']">email is required</span>
+                            <span *ngIf="rf['email'].errors!['email']">invalid email</span>
+                        </div>
+                    </section>
+            
+                    <!-- Password input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="password" id="registerPassword" formControlName="password" class="form-control text-white" />
+                        <label mdbLabel class="form-label text-white" for="registerPassword">Password</label>
+                    </mdb-form-control>
+                    <div class="mb-3">
+                        <section  *ngIf="rf['password'].errors != null && rf['password'].touched">
+                            <span *ngIf="rf['password'].errors!['required']">password is required</span>
+                            <span *ngIf="rf['password'].errors!['pattern']">password does not match the criteria, atleast (one upper case, one lower case, one number) and the range is 4 - 10</span>
+                        </section>
+                    </div>
+            
+                    <!-- Repeat Password input -->
+                    <mdb-form-control class="mb-1">
+                        <input mdbInput type="password" id="registerRepeatPassword" formControlName="confirm_password" class="form-control text-white" />
+                        <label mdbLabel class="form-label text-white" for="registerRepeatPassword">Repeat password</label>
+                    </mdb-form-control>
+                    <div class="mb-3">
+                        <section  *ngIf="rf['confirm_password'].errors != null && rf['confirm_password'].touched">
+                            <span *ngIf="rf['confirm_password'].errors!['matching']">password does not match</span>
+                        </section>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-1">
+                        <input mdbCheckbox class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
+                            formControlName="terms"
+                            [checked]="true" aria-label="registerCheckHelpText" />
+                        <label class="form-check-label" for="registerCheck" style="color: aliceblue;">
+                            I have read and agree to the terms
+                        </label>
+                        <div class="mb-2">
+                            <section  *ngIf="rf['terms'].errors != null && rf['terms'].touched">
+                                <span *ngIf="rf['terms'].errors!['required']"> &nbsp;&nbsp; accept terms</span>
+                            </section>
+                        </div>
+                    </div>
+
+                    <section class="container">
+                        <div class="row">
+                            <section class="col-md-6 text-left">
+                                <!-- Submit button -->
+                                <button mdbRipple
+                                    type="submit"
+                                    class="btn btn-primary btn-block mb-3"
+                                    style="background-color: rgb(254, 253, 253);">
+                                    <label class="custom-label">Sign Up</label>
+                                </button>
+                            </section>
+
+                            <section class="col-md-6 text-right">
+                                <button mdbRipple type="reset" 
+                                    class="btn btn-primary btn-block mb-3"
+                                    style="background-color: rgb(252, 251, 251);"
+                                    (click)="revert_register()">
+                                    <label class="custom-label">Reset</label>
+                                </button>
+                            </section>
+                        </div>
+                    </section>
+                </form>
+            </mdb-tab>
+        </mdb-tabs>
+    </div>
+</section>

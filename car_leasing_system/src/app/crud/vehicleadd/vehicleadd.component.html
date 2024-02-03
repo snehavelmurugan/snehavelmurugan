@@ -1,0 +1,77 @@
+<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()" class="container">
+  <div formGroupName="vehicle">
+    <!-- <div>
+      <label for="vin">Vehicle Identification Number:</label><br>
+      <input type="text" id="vin" formControlName="vin">
+    </div> -->
+    <div class="user-box">
+      <label for="made">Made:</label><br>
+      <input type="text" id="made" formControlName="made">
+      <span *ngIf="vehicleForm?.get('made')?.hasError('required')">Made is required</span>
+    </div>
+
+
+    <div>
+      <label for="model">Model:</label><br>
+      <input type="text" id="model" formControlName="model"><span
+        *ngIf="vehicleForm?.get('model')?.hasError('required')">Model is required</span>
+    </div>
+    <div>
+      <label for="year">Year:</label><br>
+      <input type="text" id="year" formControlName="year">
+      <span #leasePriceError class="text-danger" *ngIf="vehicleForm?.get('year')?.hasError('required')">Year is
+        required</span>
+      <span *ngIf="vehicleForm?.get('year')?.hasError('pattern')">Invalid year format (e.g., 2023)</span>
+    </div>
+    <div>
+      <label for="lease_price">Lease price:</label><br>
+      <input type="text" id="lease_price" formControlName="lease_price">
+      <br>
+      <span *ngIf="vehicleForm?.get('lease_price')?.hasError('required')">Lease price is required</span>
+      <span *ngIf="vehicleForm?.get('lease_price')?.hasError('pattern')">Invalid lease price format</span><br><br>
+      <!-- <span #leasePriceError class="text-danger" *ngIf="lease_price.invalid" >
+          Lease Price must be a valid number (e.g., 1000.00).
+        </span> -->
+    </div>
+  </div>
+  <div class="image-upload">
+
+    <h2>Upload Image</h2>
+
+    <label for="file" class="custom-file-upload">
+
+      <span class="icon">&#x21E1;</span> Choose File
+
+    </label>
+
+    <input type="file" id="file" (change)="onFileSelected($event)" accept="image/webp" formControlName="file" />
+
+    <span class="file-name" *ngIf="selectedFile">{{ selectedFile.name }}</span>
+
+  </div>
+  <button type="submit">Add Vehicle</button> &nbsp;
+  <a href="/view"><button type="button">View</button></a>
+</form>
+
+<!--
+<div class="login-box">
+    <h2>Login</h2>
+    <form >
+      <div class="user-box">
+        <input type="text" name="" required="">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="" required="">
+        <label>Password</label>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+</div> -->
+

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-sm navbar-dark nav-height custom-bg-color">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="home">
+                <img src="./assets/images/CLS.png" height="50" alt="CLS Logo" loading="lazy" />
+            </a>
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item" *ngIf="!is_logged_in()">
+                    <a class="nav-link" href="home" style=" color: white;">HOME</a>
+                </li>
+                <li class="nav-item" *ngIf="!is_logged_in()">
+                    <a class="nav-link" href="about" style=" color: white;">ABOUT</a>
+                </li>
+                <li class="nav-item" *ngIf="!is_logged_in()">
+                    <a class="nav-link" href="contact" style=" color: white;">CONTACT</a>
+                </li>
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" *ngIf="is_logged_in()">
+                        <a class="nav-link" cut href="add" style=" color: white;">ADD CARS</a>
+                    </li>
+                    <li class="nav-item" *ngIf="is_logged_in()">
+                        <a class="nav-link" href="view" style=" color: white;">VIEW CARS</a>
+                    </li>
+                    <li class="nav-item" *ngIf="is_logged_in()">
+                        <a class="nav-link" href="reservation/0" style=" color: white;">BOOK CARS</a>
+                    </li>
+                    <li class="nav-item" *ngIf="is_logged_in()">
+                        <a class="nav-link" href="payment/0" style=" color: white;">PAYMENT/BILLINGS</a>
+                    </li>
+                    <li class="nav-item" *ngIf="is_logged_in()">
+                        <a class="nav-link" href="feedback" style=" color: white;">FEEDBACK</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="!is_logged_in()">
+                    <a class="nav-link" href="login" style=" color: white;">LOGIN / REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" *ngIf="is_logged_in()" (click)="logout()"style=" color: white;">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
